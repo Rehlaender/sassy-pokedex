@@ -1,11 +1,27 @@
 .SearchPokemon {
   position: absolute;
-  height: 100px;
+  height: 50px;
   width: 300px;
   background-color: white;
   z-index: 20;
-  top: 330px;
+  top: 380px;
   display: flex;
   align-items: center;
   justify-content: center;
+  input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 80%;
+    font-size: 1em;
+  }
+  .submitButton {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: auto;
+    border: 0px;
+    outline: 0;
+    border-radius: 0px;
+  }
 }

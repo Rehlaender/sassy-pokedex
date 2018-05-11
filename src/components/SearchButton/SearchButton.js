@@ -24,9 +24,7 @@ class SearchButton extends Component {
     );
     return (
       <Button onClick={this.toggleState} className="SearchButton" bsSize="large">
-      {
-        icon
-      }
+      {icon}
       </Button>
     );
   }

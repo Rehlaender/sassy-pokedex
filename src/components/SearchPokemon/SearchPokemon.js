@@ -1,11 +1,41 @@
 import React, { Component } from 'react';
+import { FormControl } from 'react-bootstrap';
+import { Button, Glyphicon } from 'react-bootstrap';
 import './SearchPokemon.css';
 
 class SearchPokemon extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      searchValue: ''
+    }
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  returnNameToParent() {
+    this.props.printName(this.state.searchValue);
+  }
+
+  handleChange(event) {
+    this.setState({searchValue: event.target.value});
+  }
+
+  componentDidMount(){
+    this.nameInput.focus();
+  }
+
   render() {
     return (
       <div className="SearchPokemon">
-        add stuff here for id or name
+        <input
+          ref={(input) => { this.nameInput = input; }}
+          onChange={this.handleChange}
+          value={this.state.searchValue}
+          placeholder="pokemon name or id" type="text" />
+        <Button bsStyle="success" onClick={this.toggleState} className="submitButton" bsSize="small">
+          <Glyphicon glyph="check"  />
+        </Button>
       </div>
     );
   }
