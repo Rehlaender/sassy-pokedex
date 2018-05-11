@@ -7,7 +7,7 @@ class CardContainer extends Component {
   render() {
     return (
       <div className="cardContainer">
-        <div className="cardConotent">
+        <div className="cardContent">
           <div>{this.props.id}</div>
           <div>- pokemonimage</div>
           <div>- poketype</div>

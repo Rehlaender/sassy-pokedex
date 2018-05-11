@@ -2,7 +2,10 @@
   position: relative;
   width: 100%;
   max-width: 425px;
-  height: 100vh; }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
 
 .frontBox {
   display: none;
@@ -11,10 +14,12 @@
   left: 0;
   background: rgba(255, 0, 0, 0.2);
   width: 100%;
+  max-height: 700px;
   height: 100%;
   z-index: 1000; }
 
 .App {
+  max-height: 700px;
   height: 100%;
   width: 100%; }
 
