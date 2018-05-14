@@ -8,8 +8,8 @@ class CardContainer extends Component {
     return (
       <div className="cardContainer">
         <div className="cardContent">
-          <div>{this.props.id}</div>
-          <div>- pokemonimage</div>
+          <div>{this.props.foundPokemon.id}</div>
+          <div>- pokemonimage {this.props.foundPokemon.name}</div>
           <div>- poketype</div>
           <div>- pokeinfo</div>
           <div>- pokemonstats</div>

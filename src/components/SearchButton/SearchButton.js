@@ -16,6 +16,10 @@ class SearchButton extends Component {
     this.setState({isSearching: !this.state.isSearching});
   }
 
+  returnNameToParent() {
+    this.props.printName(this.state.isSearching);
+  }
+
   render() {
     let icon = this.state.isSearching ? (
       <Glyphicon glyph="check" />

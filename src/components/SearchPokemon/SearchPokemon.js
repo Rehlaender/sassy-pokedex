@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormControl } from 'react-bootstrap';
 import { Button, Glyphicon } from 'react-bootstrap';
+
 import './SearchPokemon.css';
 
 class SearchPokemon extends Component {
@@ -11,10 +12,11 @@ class SearchPokemon extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.returnNameToParent = this.returnNameToParent.bind(this);
   }
 
   returnNameToParent() {
-    this.props.printName(this.state.searchValue);
+    this.props.searchPokemon(this.state.searchValue);
   }
 
   handleChange(event) {
@@ -33,7 +35,7 @@ class SearchPokemon extends Component {
           onChange={this.handleChange}
           value={this.state.searchValue}
           placeholder="pokemon name or id" type="text" />
-        <Button bsStyle="success" onClick={this.toggleState} className="submitButton" bsSize="small">
+        <Button bsStyle="success" onClick={this.returnNameToParent} className="submitButton" bsSize="small">
           <Glyphicon glyph="check"  />
         </Button>
       </div>
