@@ -4,15 +4,35 @@ import PropTypes from 'prop-types';
 import './CardContainer.css';
 
 class CardContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      imageIsLoaded: false
+    };
+
+    this.returnImageProp = this.returnImageProp.bind(this);
+  }
+
+  returnImageProp() {
+    return this.props.foundPokemon.sprites.front_default;
+  }
+
+  componentDidUpdate(nextProps) {
+    if(!this.state.imageIsLoaded) {
+      this.setState({imageIsLoaded: true});
+    }
+  }
+
   render() {
     return (
       <div className="cardContainer">
         <div className="cardContent">
           <div>{this.props.foundPokemon.id}</div>
-          <div>- pokemonimage {this.props.foundPokemon.name}</div>
-          <div>- poketype</div>
-          <div>- pokeinfo</div>
-          <div>- pokemonstats</div>
+          <div>{this.props.foundPokemon.name}</div>
+          <img src={
+            (this.state.imageIsLoaded) ? this.returnImageProp() : ''
+          }
+          />
         </div>
       </div>
     );
@@ -20,94 +40,3 @@ class CardContainer extends Component {
 }
 
 export default CardContainer;
-
-CardContainer.propTypes = {
-  id: PropTypes.number,
-  sprites: PropTypes.object,
-  types: PropTypes.array,
-  stats: PropTypes.array,
-  weigth: PropTypes.number,
-  height: PropTypes.number
-};
-
-CardContainer.defaultProps = {
-  id: 1,
-  weight: 69,
-  height: 7,
-  "types": [
-      {
-          "slot": 2,
-          "type": {
-              "url": "https://pokeapi.co/api/v2/type/4/",
-              "name": "poison"
-          }
-      },
-      {
-          "slot": 1,
-          "type": {
-              "url": "https://pokeapi.co/api/v2/type/12/",
-              "name": "grass"
-          }
-      }
-  ],
-  stats: [
-      {
-          "stat": {
-              "url": "https://pokeapi.co/api/v2/stat/6/",
-              "name": "speed"
-          },
-          "effort": 0,
-          "base_stat": 45
-      },
-      {
-          "stat": {
-              "url": "https://pokeapi.co/api/v2/stat/5/",
-              "name": "special-defense"
-          },
-          "effort": 0,
-          "base_stat": 65
-      },
-      {
-          "stat": {
-              "url": "https://pokeapi.co/api/v2/stat/4/",
-              "name": "special-attack"
-          },
-          "effort": 1,
-          "base_stat": 65
-      },
-      {
-          "stat": {
-              "url": "https://pokeapi.co/api/v2/stat/3/",
-              "name": "defense"
-          },
-          "effort": 0,
-          "base_stat": 49
-      },
-      {
-          "stat": {
-              "url": "https://pokeapi.co/api/v2/stat/2/",
-              "name": "attack"
-          },
-          "effort": 0,
-          "base_stat": 49
-      },
-      {
-          "stat": {
-              "url": "https://pokeapi.co/api/v2/stat/1/",
-              "name": "hp"
-          },
-          "effort": 0,
-          "base_stat": 45
-      }
-  ],
-  sprites: {
-    "back_female": "https://pokeapi.co/media/sprites/pokemon/back/female/12.png",
-    "back_shiny_female": "https://pokeapi.co/media/sprites/pokemon/back/shiny/female/12.png",
-    "back_default": "https://pokeapi.co/media/sprites/pokemon/back/12.png",
-    "front_female": "https://pokeapi.co/media/sprites/pokemon/female/12.png",
-    "front_shiny_female": "https://pokeapi.co/media/sprites/pokemon/shiny/female/12.png",
-    "back_shiny": "https://pokeapi.co/media/sprites/pokemon/back/shiny/12.png",
-    "front_default": "https://pokeapi.co/media/sprites/pokemon/12.png",
-    "front_shiny": "https://pokeapi.co/media/sprites/pokemon/shiny/12.png"
-  },
-};
