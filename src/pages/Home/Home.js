@@ -36,7 +36,6 @@ class Home extends Component {
           <CardContainer
             foundPokemon={this.state.foundPokemon}/>
         </div>
-
         <SearchButton />
       </div>
     );

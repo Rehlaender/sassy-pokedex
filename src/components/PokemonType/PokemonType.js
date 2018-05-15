@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './PokemonStats.css';
+import './PokemonType.css';
 
-class PokemonStats extends Component {
+class PokemonType extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,7 +12,7 @@ class PokemonStats extends Component {
   }
 
   renderStats() {
-      return this.props.stats.map((stat, i) => {
+      return this.props.types.map((stat, i) => {
         return (
           <div key={i}>
             {stat.stat.name}: {stat.base_stat}
@@ -25,24 +25,23 @@ class PokemonStats extends Component {
 
     let stats = this.renderStats();
     return (
-      <div className="statsContainer">
-       {stats}
+      <div className="typesContainer">
+       {types}
       </div>
     );
   }
 }
 
-export default PokemonStats;
+export default PokemonType;
 
-PokemonStats.propTypes = {
+PokemonType.propTypes = {
 };
 
-PokemonStats.defaultProps = {
-  stats: [
+PokemonType.defaultProps = {
+  types: [
     {
-      base_stat: 65,
-      effort: 1,
-      stat: {url: "https://pokeapi.co/api/v2/stat/6/", name: "speed"}
-    },
+      slot:1,
+      type: {url: "https://pokeapi.co/api/v2/type/12/", name: "grass"}
+    }
   ]
 };

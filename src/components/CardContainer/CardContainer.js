@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import './CardContainer.css';
+
+import PokemonStats from '../../components/PokemonStats/PokemonStats';
 
 class CardContainer extends Component {
   constructor(props) {
@@ -33,6 +34,8 @@ class CardContainer extends Component {
             (this.state.imageIsLoaded) ? this.returnImageProp() : ''
           }
           />
+          <PokemonStats stats={(this.state.imageIsLoaded) ? this.props.foundPokemon.stats : []} />
+
         </div>
       </div>
     );
