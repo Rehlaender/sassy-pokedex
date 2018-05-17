@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Home from './pages/Home/Home';
-import About from './pages/About/About';
 
 import './App.css';
 
@@ -17,8 +16,7 @@ class Router extends Component {
         <div className="frontBox"></div>
         <Routing>
           <div className="App">
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
+            <Route path="*" component={Home} />
           </div>
         </Routing>
       </div>
