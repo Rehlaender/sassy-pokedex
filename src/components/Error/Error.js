@@ -8,7 +8,7 @@ class Error extends Component {
     return (
       <div className="errorContainer">
         <img className="Error-logo" src={error}/>
-        <p>"Pokemon not found"</p>
+        <p>"{this.props.pokemon} not found"</p>
       </div>
     );
   }

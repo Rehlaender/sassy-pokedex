@@ -15,7 +15,8 @@ class Home extends Component {
       foundPokemon: {},
       showSearch: false,
       isLoading: false,
-      errors: false
+      errors: false,
+      pokemon: ''
     }
 
     this.searchPokemon = this.searchPokemon.bind(this);
@@ -25,6 +26,7 @@ class Home extends Component {
   }
 
   searchPokemon(pokemon) {
+      this.setState({pokemon});
       this.toggleLoading(true);
       Api.getPokemonById(pokemon).then( response => {
         this.toggleLoading(false);
@@ -62,7 +64,8 @@ class Home extends Component {
           <CardContainer
             foundPokemon={this.state.foundPokemon}
             isLoading={this.state.isLoading}
-            errors={this.state.errors} />
+            errors={this.state.errors}
+            pokemon={this.state.pokemon} />
         </div>
         <SearchButton showSearch={this.showSearch} />
       </div>

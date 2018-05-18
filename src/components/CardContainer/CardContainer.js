@@ -43,7 +43,7 @@ class CardContainer extends Component {
               <PokemonStats stats={(this.state.imageIsLoaded) ? this.props.foundPokemon.stats : []} />
             </div>
           ) :
-          <Error />
+          <Error pokemon={this.props.pokemon}/>
       }
       {
         (this.props.isLoading) ? <Loading /> : ''
