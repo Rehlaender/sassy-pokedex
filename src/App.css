@@ -6,7 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Inconsolata', monospace; }
+  font-family: 'Inconsolata', monospace;
+  overflow: hidden; }
 
 .frontBox {
   display: none;

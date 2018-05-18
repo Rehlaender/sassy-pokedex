@@ -8,7 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // border-top: 1px solid tomato;
+  left: -300px;
+  transition: all linear 200ms;
+  padding-left: 8px;
   input {
     border: 0;
     outline: 0;
@@ -16,6 +18,7 @@
     width: 80%;
     font-size: 1em;
     color: tomato;
+    text-transform: lowercase;
   }
   .submitButton {
     position: absolute;
@@ -25,5 +28,25 @@
     border: 0px;
     outline: 0;
     border-radius: 0px;
+  }
+}
+.willShow {
+  left: 63px;
+}
+@media screen and (max-width: 425px) {
+  .willShow {
+    left: 63px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .willShow {
+    left: 38px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .willShow {
+    left: 10px;
   }
 }

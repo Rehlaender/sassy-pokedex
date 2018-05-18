@@ -10,4 +10,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 10%;
+}
+
+.pokemonId {
+  font-weight: bold;
+}
+.pokemonName {
+
+}
+.pokemonSprite {
+    animation: IDDLE-POKEMON 500ms infinite;
+    width: 100px;
+}
+
+@keyframes IDDLE-POKEMON {
+  0% {
+    margin-left: 5px;
+    margin-bottom: 1px;
+    transform: rotate(5deg);
+  }
+  50% {
+    margin-left: 0px;
+    margin-bottom: 0px;
+    transform: rotate(-5deg);
+  }
+  100% {
+    margin-left: 5px;
+    margin-bottom: 1px;
+    transform: rotate(5deg);
+  }
 }

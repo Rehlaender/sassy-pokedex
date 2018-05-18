@@ -40,6 +40,7 @@ class Home extends Component {
         <div className="redBar"></div>
         <SearchPokemon
           showSearch={this.state.showSearch}
+          toggleSearchBar={this.showSearch}
           searchPokemon={this.searchPokemon} />
         <div className="screenContainer">
           <CardContainer foundPokemon={this.state.foundPokemon} />

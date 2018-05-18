@@ -28,9 +28,9 @@ class CardContainer extends Component {
     return (
       <div className="cardContainer">
         <div className="cardContent">
-          <div>{this.props.foundPokemon.id}</div>
-          <div>{this.props.foundPokemon.name}</div>
-          <img src={
+          <div className="pokemonId">{this.props.foundPokemon.id}</div>
+          <div className="pokemonName">{this.props.foundPokemon.name}</div>
+          <img className="pokemonSprite" src={
             (this.state.imageIsLoaded) ? this.returnImageProp() : ''
           }
           />

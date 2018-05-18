@@ -14,6 +14,7 @@ class SearchButton extends Component {
 
   toggleState() {
     this.setState({isSearching: !this.state.isSearching});
+    this.props.showSearch();
   }
 
   returnNameToParent() {

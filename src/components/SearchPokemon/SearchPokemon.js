@@ -16,7 +16,12 @@ class SearchPokemon extends Component {
   }
 
   returnNameToParent() {
-    this.props.searchPokemon(this.state.searchValue);
+    const answer = this.state.searchValue;
+    this.props.searchPokemon(answer);
+    this.setState({searchValue: ''});
+    setTimeout(() =>{
+      this.props.toggleSearchBar();
+    }, 200);
   }
 
   handleChange(event) {
