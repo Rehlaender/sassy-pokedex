@@ -1,0 +1,52 @@
+.SearchPokemon {
+  position: absolute;
+  height: 50px;
+  width: 300px;
+  background-color: lightgray;
+  z-index: 20;
+  top: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -300px;
+  transition: all linear 200ms;
+  padding-left: 8px;
+  input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    width: 80%;
+    font-size: 1em;
+    color: tomato;
+    text-transform: lowercase;
+  }
+  .submitButton {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: auto;
+    border: 0px;
+    outline: 0;
+    border-radius: 0px;
+  }
+}
+.willShow {
+  left: 63px;
+}
+@media screen and (max-width: 425px) {
+  .willShow {
+    left: 63px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .willShow {
+    left: 38px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .willShow {
+    left: 10px;
+  }
+}
