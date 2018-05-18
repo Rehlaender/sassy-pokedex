@@ -68,6 +68,7 @@ class Home extends Component {
             pokemon={this.state.pokemon} />
         </div>
         <SearchButton showSearch={this.showSearch} />
+        <p className="bymaar">by:maar</p>
       </div>
     );
   }
