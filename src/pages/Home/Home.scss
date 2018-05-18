@@ -10,6 +10,33 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  height: 100%;
   margin-top: 30px;
+}
+
+.redBar {
+  left: 0;
+  max-width: calc((425px - 300px)/2);
+  width: calc((425px - 300px)/2);
+  position: absolute;
+  z-index: 100;
+  height: 450px;
+  background: tomato;
+}
+
+@media screen and (max-width: 425px) {
+  .redBar {
+    width: 65px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .redBar {
+    width: 38px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .redBar {
+    width: 10px;
+  }
 }

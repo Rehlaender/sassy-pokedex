@@ -18,8 +18,8 @@ class CardContainer extends Component {
     return this.props.foundPokemon.sprites.front_default;
   }
 
-  componentDidUpdate(nextProps) {
-    if(!this.state.imageIsLoaded) {
+  componentWillUpdate(nextProps) {
+    if(!this.state.imageIsLoaded && nextProps.foundPokemon.id) {
       this.setState({imageIsLoaded: true});
     }
   }
@@ -35,7 +35,6 @@ class CardContainer extends Component {
           }
           />
           <PokemonStats stats={(this.state.imageIsLoaded) ? this.props.foundPokemon.stats : []} />
-
         </div>
       </div>
     );

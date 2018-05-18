@@ -12,10 +12,12 @@ class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      foundPokemon: {}
+      foundPokemon: {},
+      showSearch: false
     }
 
     this.searchPokemon = this.searchPokemon.bind(this);
+    this.showSearch = this.showSearch.bind(this);
   }
 
   searchPokemon(pokemon) {
@@ -28,15 +30,21 @@ class Home extends Component {
       });
   }
 
+  showSearch() {
+    this.setState({showSearch: !this.state.showSearch});
+  }
+
   render() {
     return (
       <div className="Home mainContainer">
-        <SearchPokemon searchPokemon={this.searchPokemon} />
+        <div className="redBar"></div>
+        <SearchPokemon
+          showSearch={this.state.showSearch}
+          searchPokemon={this.searchPokemon} />
         <div className="screenContainer">
-          <CardContainer
-            foundPokemon={this.state.foundPokemon}/>
+          <CardContainer foundPokemon={this.state.foundPokemon} />
         </div>
-        <SearchButton />
+        <SearchButton showSearch={this.showSearch} />
       </div>
     );
   }

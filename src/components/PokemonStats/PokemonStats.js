@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Stat from './Stat';
+
 import PropTypes from 'prop-types';
 import './PokemonStats.css';
 
@@ -14,9 +16,7 @@ class PokemonStats extends Component {
   renderStats() {
       return this.props.stats.map((stat, i) => {
         return (
-          <div key={i}>
-            {stat.stat.name}: {stat.base_stat}
-          </div>
+          <Stat key={i} name={stat.stat.name} statValue={stat.base_stat}/>
       )
     });
   }

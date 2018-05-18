@@ -29,7 +29,7 @@ class SearchPokemon extends Component {
 
   render() {
     return (
-      <div className="SearchPokemon">
+      <div className={this.props.showSearch ? "SearchPokemon willShow" : "SearchPokemon"}>
         <input
           ref={(input) => { this.nameInput = input; }}
           onChange={this.handleChange}

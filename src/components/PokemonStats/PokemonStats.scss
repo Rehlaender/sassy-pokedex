@@ -1,0 +1,28 @@
+.statsContainer {
+  width: 100%;
+}
+.statBar {
+  width: 100%;
+  background: lightgray;
+}
+.stat {
+  height: 5px;
+}
+.hp {
+  background-color: red;
+}
+.attack {
+  background-color: orange;
+}
+.defense {
+  background-color: yellow;
+}
+.special-attack {
+  background-color: blue;
+}
+.special-defense  {
+  background-color: green;
+}
+.speed {
+  background-color: pink;
+}
