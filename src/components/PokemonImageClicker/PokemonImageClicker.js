@@ -24,7 +24,6 @@ class PokemonImageClicker extends Component {
     const activeImage = this.state.activeImage;
     this.setState({pastImage: activeImage});
     const willToggle = this.returnFirstWordOfImage(activeImage);
-    console.log(this.returnFirstWordOfImage(activeImage));
     switch (this.state.gender) {
       case 'male':
         this.setState({activeImage: `${willToggle}_default` })

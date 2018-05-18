@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import './CardContainer.css';
 
+import Loading from '../../components/Loading/Loading';
+import Error from '../../components/Error/Error';
+
+
 import PokemonStats from '../../components/PokemonStats/PokemonStats';
 
 class CardContainer extends Component {
@@ -27,15 +31,23 @@ class CardContainer extends Component {
   render() {
     return (
       <div className="cardContainer">
-        <div className="cardContent">
-          <div className="pokemonId">{this.props.foundPokemon.id}</div>
-          <div className="pokemonName">{this.props.foundPokemon.name}</div>
-          <img className="pokemonSprite" src={
-            (this.state.imageIsLoaded) ? this.returnImageProp() : ''
-          }
-          />
-          <PokemonStats stats={(this.state.imageIsLoaded) ? this.props.foundPokemon.stats : []} />
-        </div>
+      {
+        (!this.props.isLoading && !this.props.errors) ? (
+            <div className="cardContent">
+              <div className="pokemonId">{this.props.foundPokemon.id}</div>
+              <div className="pokemonName">{this.props.foundPokemon.name}</div>
+              <img className="pokemonSprite" src={
+                (this.state.imageIsLoaded) ? this.returnImageProp() : ''
+              }
+              />
+              <PokemonStats stats={(this.state.imageIsLoaded) ? this.props.foundPokemon.stats : []} />
+            </div>
+          ) :
+          <Error />
+      }
+      {
+        (this.props.isLoading) ? <Loading /> : ''
+      }
       </div>
     );
   }

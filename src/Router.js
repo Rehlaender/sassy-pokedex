@@ -13,7 +13,6 @@ class Router extends Component {
   render() {
     return (
       <div id="mainWrapper">
-        <div className="frontBox"></div>
         <Routing>
           <div className="App">
             <Route path="*" component={Home} />

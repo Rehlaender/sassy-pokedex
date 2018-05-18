@@ -6,8 +6,12 @@ import './PokemonStats.css';
 class Stat extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      willGrow: false
+    }
 
     this.returnValueAccordingToMax = this.returnValueAccordingToMax.bind(this);
+    this.changeWidth = this.changeWidth.bind(this);
   }
 
   returnValueAccordingToMax(statName, statValue) {
@@ -35,16 +39,30 @@ class Stat extends Component {
     }
   }
 
+  changeWidth() {
+    setTimeout(() =>{
+      this.setState({willGrow: true});
+    }, 100);
+  }
+
+  componentDidMount() {
+    this.changeWidth();
+  }
+
   render() {
 
     let statBarWidth = {
       width: `${this.returnValueAccordingToMax(this.props.name, this.props.statValue)}%`,
     };
 
+    const statBarWidth0 = {
+      width: `0%`,
+    };
+
     return (
       <div className="statBar">
         {this.props.name}
-        <div className={`stat ${this.props.name}`} style={statBarWidth}></div>
+        <div className={`stat ${this.props.name}`} style={ (this.state.willGrow) ? statBarWidth : statBarWidth0}></div>
       </div>
 
     );

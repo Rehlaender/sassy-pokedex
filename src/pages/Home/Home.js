@@ -13,25 +13,41 @@ class Home extends Component {
     super(props)
     this.state = {
       foundPokemon: {},
-      showSearch: false
+      showSearch: false,
+      isLoading: false,
+      errors: false
     }
 
     this.searchPokemon = this.searchPokemon.bind(this);
     this.showSearch = this.showSearch.bind(this);
+    this.toggleLoading = this.toggleLoading.bind(this);
+    this.toggleErrors = this.toggleErrors.bind(this);
   }
 
   searchPokemon(pokemon) {
+      this.toggleLoading(true);
       Api.getPokemonById(pokemon).then( response => {
-        console.log((response.data), 'lel' );
-        this.setState({foundPokemon: response.data})
+        this.toggleLoading(false);
+        this.toggleErrors(false);
+        this.setState({foundPokemon: response.data});
       })
       .catch((error) => {
-        console.log(error, '=== error');
+        this.toggleLoading(false);
+        this.toggleErrors(true);
       });
   }
 
   showSearch() {
     this.setState({showSearch: !this.state.showSearch});
+  }
+
+  toggleErrors(value) {
+    this.setState({errors: value});
+  }
+
+  toggleLoading(value) {
+    this.setState({isLoading: value});
+    ('is isLoading?', this.state.isLoading);
   }
 
   render() {
@@ -43,7 +59,10 @@ class Home extends Component {
           toggleSearchBar={this.showSearch}
           searchPokemon={this.searchPokemon} />
         <div className="screenContainer">
-          <CardContainer foundPokemon={this.state.foundPokemon} />
+          <CardContainer
+            foundPokemon={this.state.foundPokemon}
+            isLoading={this.state.isLoading}
+            errors={this.state.errors} />
         </div>
         <SearchButton showSearch={this.showSearch} />
       </div>
