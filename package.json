@@ -21,6 +21,12 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b gh-pages -d build"
+  },
+  "homepage": "https://rehlaender.github.io/react-portfolio/sassy-pokedex",
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
