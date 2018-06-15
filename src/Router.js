@@ -15,7 +15,7 @@ class Router extends Component {
       <div id="mainWrapper">
         <Routing>
           <div className="App">
-            <Route path="/react-portfolio/sassy-pokedex" component={Home} />
+            <Route path="/sassy-pokedex" component={Home} />
           </div>
         </Routing>
       </div>
