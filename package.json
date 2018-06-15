@@ -25,7 +25,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -b gh-pages -d build"
   },
-  "homepage": "https://rehlaender.github.io/react-portfolio/sassy-pokedex",
+  "homepage": "https://rehlaender.github.io/sassy-pokedex",
   "devDependencies": {
     "gh-pages": "^1.2.0"
   }
